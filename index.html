@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+      <div class="header">
+      <h1 style="background-color:pink;color:white;">WORDLE</h1>
+      <input type="password" value="guess" placeholder="wordle" id="wordle">
+      </div>
+      
+      <div id="word">
+        
+      </div>
+      <div class="userinput">
+        <div id="warning">&nbsp;</div>
+        <input type="text" value="" placeholder="guess" id="urguess">
+        <button onclick="guessesno()" >Go!</button>
+        <div id="result"></div>
+        
+      </div>
+    </main>
+
+      <div style="border: 2px solid pink;">
+        <h4>
+          <font color="grey">
+          <div style="display:flex;justify-content: center;align-items:center;"><div style="width:20px;height:20px;background-color:pink;">&nbsp;</div> &nbsp;&nbsp;&nbsp;Means the letter is in the same position as in the word.</div>
+          <br>
+          <div style="display:flex;justify-content: center;align-items:center;"><div style="width:20px;height:20px;background-color:lavender;">&nbsp;</div> &nbsp;&nbsp;&nbsp;Means the letter is in the word but at a different position.</div>
+        </font>
+        </h4>
+      </div>
+    
+    <script src="sketch.js"></script>
+  </body>
+</html>

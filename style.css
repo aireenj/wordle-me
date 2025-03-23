@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  text-align:center;
+  padding-bottom:30px;
+  justify-content: center;
+}
+
+#word {
+  display: grid;
+  justify-content: center; /* Center horizontally */
+}
+
+.letter{
+  color:pink;
+  background-color:white;
+  border:1px solid pink;
+  border-radius:6px;
+  width:25px;
+  height:25px;
+  padding:10px;
+  margin:3px;
+  font-size:24px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.userinput{
+  text-align:center;
+  margin-top:25px;
+}
+
+#warning{
+  margin-bottom:10px;
+}
+
+#result{
+  margin-top:20px;
+  padding:10px;
+}
