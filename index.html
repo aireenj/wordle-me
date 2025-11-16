@@ -5,17 +5,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
 
   </head>
   <body>
     <main>
       <div class="header">
-      <h1 style="background-color:pink;color:white;">WORDLE</h1>
-      <input type="password" value="guess" placeholder="wordle" id="wordle">
+        <h1 style="background-color:#ffc0cb; color:white; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+          <span style="flex: 1; text-align: center;">WORDLE</span>
+          <div onclick="menu()">
+              <img src="menu.png" width="25px" alt="">
+          </div>
+        </h1> 
+
+        <div id="menubar" style="position: fixed; top:0;right: 0; height:100%; width: 0;;background-color: rgba(255, 192, 203, 0.531);">
+          <button style="width: 25px; height: 25px; background-color:pink; color:white; padding:10px; font-weight: bold; cursor: pointer; display:flex; align-self:flex-start; justify-content: center; align-items: center;" onclick="closemenu()">
+            x
+          </button>
+          <p>Length of the word:</p>
+          <input type="number" value="5" placeholder="Enter the length of the wordle" id="wlen" style="width: 50px;text-align: center;color: white;background-color: pink;border: none;">
+          <button style="border: none;color: grey;" class="length-button" onclick="withlen()">Go</button>
+          <p id="lenwarn"></p>
+          <p>Custom word:</p>
+          <input type="password" value="" placeholder="Enter the wordle" id="cword" style="width: 100px;text-align: center;color: white;background-color: pink;border: none;">
+          <button style="border: none;color: grey;" class="custom-button" onclick="withword()">Go</button>
+          <p id="wrdwarn"></p>
+        </div>
+
+      <!-- <h3 style="color: grey;">Enter the length of the wordle you want to guess:</h3> -->
+      <h3 style="color: grey;">Guess the Wordle!!</h3>
+      <!-- <input type="number" value="5" placeholder="Enter the length of the wordle" id="wlen" style="width: 25px;text-align: center;color: white;background-color: pink;border: none;display: none;"> -->
+      
+
+      <!-- invisible to be deleted later -->
+      <input type="text" value="guess" placeholder="wordle" id="wordle" style="display:none;">
+       
       </div>
       
       <div id="word">
-        
+        <!-- the main place for the boxes -->
       </div>
       <div class="userinput">
         <div id="warning">&nbsp;</div>
@@ -26,12 +56,12 @@
       </div>
     </main>
 
-      <div style="border: 2px solid pink;">
+      <div style="border: 2px solid pink;margin:5px;">
         <h4>
           <font color="grey">
-          <div style="display:flex;justify-content: center;align-items:center;"><div style="width:20px;height:20px;background-color:pink;">&nbsp;</div> &nbsp;&nbsp;&nbsp;Means the letter is in the same position as in the word.</div>
+          <div style="display:flex;justify-content: center;align-items:center;margin: 5px;"><div style="width:20px;height:20px;background-color:pink;">&nbsp;</div>Means the letter is in the same position as in the word.</div>
           <br>
-          <div style="display:flex;justify-content: center;align-items:center;"><div style="width:20px;height:20px;background-color:lavender;">&nbsp;</div> &nbsp;&nbsp;&nbsp;Means the letter is in the word but at a different position.</div>
+          <div style="display:flex;justify-content: center;align-items:center;margin: 5px;"><div style="width:20px;height:20px;background-color:lavender;">&nbsp;</div>Means the letter is in the word but at a different position.</div>
         </font>
         </h4>
       </div>
